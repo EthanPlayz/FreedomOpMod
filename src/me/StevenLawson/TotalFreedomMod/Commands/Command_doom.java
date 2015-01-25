@@ -14,7 +14,7 @@ import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.util.Vector;
 
 @CommandPermissions(level = AdminLevel.SENIOR, source = SourceType.ONLY_CONSOLE)
-@CommandParameters(description = "For the bad Superadmins", usage = "/<command> <playername>")
+@CommandParameters(description = "If a super admin who is being bad, use this!", usage = "/<command> <playername>")
 public class Command_doom extends TFM_Command
 {
     @Override
@@ -33,15 +33,15 @@ public class Command_doom extends TFM_Command
             return true;
         }
 
-        TFM_Util.adminAction(sender.getName(), "Casting oblivion over " + player.getName(), true);
-        TFM_Util.bcastMsg(player.getName() + " will be completely obliviated!", ChatColor.RED);
+        TFM_Util.adminAction(sender.getName(), "Making dark clouds over " + player.getName(), true);
+        TFM_Util.bcastMsg(player.getName() + " has been a naughty, NAUGHTY, admin!!", ChatColor.RED);
 
         final String ip = player.getAddress().getAddress().getHostAddress().trim();
 
         // remove from superadmin
         if (TFM_AdminList.isSuperAdmin(player))
         {
-            TFM_Util.adminAction(sender.getName(), "Removing " + player.getName() + " from the superadmin list.", true);
+            TFM_Util.adminAction(sender.getName(), "Deleting " + player.getName() + " from the admin list!.", true);
             TFM_AdminList.removeSuperadmin(player);
         }
 
@@ -95,13 +95,13 @@ public class Command_doom extends TFM_Command
             public void run()
             {
                 // message
-                TFM_Util.adminAction(sender.getName(), "Banning " + player.getName() + ", IP: " + ip, true);
+                TFM_Util.adminAction(sender.getName(), "Suspending " + player.getName() + ", IP: " + ip, true);
 
                 // generate explosion
                 player.getWorld().createExplosion(player.getLocation(), 4F);
 
                 // kick player
-                player.kickPlayer(ChatColor.RED + "FUCKOFF, and get your shit together!");
+                player.kickPlayer(ChatColor.RED + "You are suspended for a day! You will not get your admin powers back untill owner, or senior approves of!");
             }
         }.runTaskLater(plugin, 3L * 20L);
 
