@@ -12,10 +12,10 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
 @CommandPermissions(level = AdminLevel.SUPER, source = SourceType.BOTH)
-@CommandParameters(description = "For the people that are still alive.", usage = "/<command>")
+@CommandParameters(description = "Fun command for players.", usage = "/<command>")
 public class Command_cake extends TFM_Command
 {
-    public static final String CAKE_LYRICS = "But there's no sense crying over every mistake. You just keep on trying till you run out of cake.";
+    public static final String CAKE_LYRICS = "No dont cry! Theres no sence of crying over every mistake.. just keep on trying till you run out of CAKE!.";
     private final Random random = new Random();
 
     @Override
