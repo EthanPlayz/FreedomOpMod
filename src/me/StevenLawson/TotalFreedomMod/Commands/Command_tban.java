@@ -41,11 +41,11 @@ public class Command_tban extends TFM_Command
             }
         }
 
-        TFM_Util.adminAction(sender.getName(), "Tempbanning: " + player.getName() + " for 5 minutes.", true);
+        TFM_Util.adminAction(sender.getName(), "Temp Banning " + player.getName() + " for 5 minutes.", true);
         TFM_BanManager.addUuidBan(
                 new TFM_Ban(TFM_UuidManager.getUniqueId(player), player.getName(), sender.getName(), TFM_Util.parseDateOffset("5m"), ChatColor.RED + "You have been temporarily banned for 5 minutes."));
 
-        player.kickPlayer(ChatColor.RED + "You have been temporarily banned for five minutes. Please read totalfreedom.me for more info.");
+        player.kickPlayer(ChatColor.RED + "Your are temp banned for minor rule breaking.. you will be auto-unbanned in 5 minutes - EXACT!");
 
         return true;
     }
