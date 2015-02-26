@@ -16,7 +16,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 @CommandPermissions(level = AdminLevel.SUPER, source = SourceType.BOTH)
-@CommandParameters(description = "Ban someone for 24 hours!", usage = "/<command> <partialname>")
+@CommandParameters(description = "Ban a player.", usage = "/<command> <partialname>")
 public class Command_ban extends TFM_Command
 {
     @Override
@@ -41,7 +41,8 @@ public class Command_ban extends TFM_Command
             reason = StringUtils.join(ArrayUtils.subarray(args, 1, args.length), " ");
         }
 
-        TFM_Util.bcastMsg(player.getName() + " has been banned for 24 hours!", ChatColor.RED);
+        TFM_Util.bcastMsg(player.getName() + " is a rule breaker!", ChatColor.RED);
+        TFM_Util.bcastMsg(player.getName()+ " shall be vanished from the server!", ChatColor.RED);
 
         // Undo WorldEdits:
         try
@@ -80,7 +81,7 @@ public class Command_ban extends TFM_Command
 
         final StringBuilder bcast = new StringBuilder()
                 .append(ChatColor.RED)
-                .append("Banning: ")
+                .append("Suspending: ")
                 .append(player.getName())
                 .append(", IP: ")
                 .append(ip);
@@ -98,7 +99,7 @@ public class Command_ban extends TFM_Command
         TFM_BanManager.addUuidBan(new TFM_Ban(TFM_UuidManager.getUniqueId(player), player.getName(), sender.getName(), null, reason));
 
         // kick Player:
-        player.kickPlayer(ChatColor.RED + "You are banned from the server for 24 hours!" + (reason != null ? ("\nReason: " + ChatColor.YELLOW + reason) : ""));
+        player.kickPlayer(ChatColor.RED + "Your account has been suspended for rulebreaking! Specific rule broken? -->" + (reason != null ? ("\nReason: " + ChatColor.LIGHT_BLUE + reason) : ""));
 
         return true;
     }
