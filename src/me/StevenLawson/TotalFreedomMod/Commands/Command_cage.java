@@ -10,7 +10,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 @CommandPermissions(level = AdminLevel.SUPER, source = SourceType.BOTH)
-@CommandParameters(description = "Place a cage around someone.", usage = "/<command> <purge | off | <partialname> [outermaterial] [innermaterial]>")
+@CommandParameters(description = "Prevent a player from moving (cage them like a bird :D).", usage = "/<command> <purge | off | <partialname> [outermaterial] [innermaterial]>")
 public class Command_cage extends TFM_Command
 {
     @Override
@@ -23,7 +23,7 @@ public class Command_cage extends TFM_Command
 
         if ("off".equals(args[0]) && sender instanceof Player)
         {
-            TFM_Util.adminAction(sender.getName(), "Uncaging " + sender.getName(), true);
+            TFM_Util.adminAction(sender.getName(), "Uncaging   " + sender.getName(), true);
             TFM_PlayerData playerdata = TFM_PlayerData.getPlayerData(sender_p);
 
             playerdata.setCaged(false);
@@ -34,7 +34,7 @@ public class Command_cage extends TFM_Command
         }
         else if ("purge".equals(args[0]))
         {
-            TFM_Util.adminAction(sender.getName(), "Uncaging all players", true);
+            TFM_Util.adminAction(sender.getName(), "All players have been uncaged", true);
 
             for (Player player : server.getOnlinePlayers())
             {
@@ -58,7 +58,7 @@ public class Command_cage extends TFM_Command
         TFM_PlayerData playerdata = TFM_PlayerData.getPlayerData(player);
 
         Material outerMaterial = Material.GLASS;
-        Material innerMaterial = Material.AIR;
+        Material innerMaterial = Material.DIRT;
 
         if (args.length >= 2)
         {
