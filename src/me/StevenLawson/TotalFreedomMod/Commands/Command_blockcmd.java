@@ -8,7 +8,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 @CommandPermissions(level = AdminLevel.SUPER, source = SourceType.BOTH)
-@CommandParameters(description = "Block all commands for a player.", usage = "/<command> <purge | <partialname>>", aliases = "blockcommands,blockcommand")
+@CommandParameters(description = "Provide a player with no permissions to absolutley ANYTHING.", usage = "/<command> <purge | <partialname>>", aliases = "blockcommands,blockcommand")
 public class Command_blockcmd extends TFM_Command
 {
     @Override
@@ -21,7 +21,7 @@ public class Command_blockcmd extends TFM_Command
 
         if (args[0].equalsIgnoreCase("purge"))
         {
-            TFM_Util.adminAction(sender.getName(), "All players are allowed commands!", true);
+            TFM_Util.adminAction(sender.getName(), " Given OP permission(s) (to commands), to all players!", true);
             int counter = 0;
             for (Player player : server.getOnlinePlayers())
             {
@@ -46,7 +46,7 @@ public class Command_blockcmd extends TFM_Command
 
         if (TFM_AdminList.isSuperAdmin(player))
         {
-            playerMsg(player.getName() + " is a ADMIN and cannot be punished by blocking commands");
+            playerMsg(player.getName() + " Nice try, a admin can bypass this!");
             return true;
         }
 
@@ -54,8 +54,8 @@ public class Command_blockcmd extends TFM_Command
 
         playerdata.setCommandsBlocked(!playerdata.allCommandsBlocked());
 
-        TFM_Util.adminAction(sender.getName(), (playerdata.allCommandsBlocked() ? "B" : "Unb") + "locking all commands for " + player.getName(), true);
-        playerMsg((playerdata.allCommandsBlocked() ? "B" : "Unb") + "locked all commands.");
+        TFM_Util.adminAction(sender.getName(), (playerdata.allCommandsBlocked() ? "B" : "Unb") + "has removed all command permissions for " + player.getName(), true);
+        playerMsg((playerdata.allCommandsBlocked() ? "B" : "Unb") + "locked all commands");
 
         return true;
     }
