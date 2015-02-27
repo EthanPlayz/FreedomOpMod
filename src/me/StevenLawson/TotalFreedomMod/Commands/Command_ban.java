@@ -99,7 +99,7 @@ public class Command_ban extends TFM_Command
         TFM_BanManager.addUuidBan(new TFM_Ban(TFM_UuidManager.getUniqueId(player), player.getName(), sender.getName(), null, reason));
 
         // kick Player:
-        player.kickPlayer(ChatColor.RED + "Your account has been suspended for rulebreaking! Specific rule broken? -->" + (reason != null ? ("\nReason: " + ChatColor.LIGHT_BLUE + reason) : ""));
+        player.kickPlayer(ChatColor.RED + "Your account has been suspended for rulebreaking! Specific rule broken? -->" + (reason != null ? ("\nReason: " + ChatColor.YELLOW + reason) : ""));
 
         return true;
     }
