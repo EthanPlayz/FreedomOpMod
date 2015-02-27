@@ -13,7 +13,7 @@ server:
   port: 25565
 
   # Shown at the server list
-  motd: &cMGMCOP - &dRunning on &6%mcversion%
+  motd: MGMCOP &8- Minecraft %mcversion%
 
   # Every word in the MOTD will be a different color unless prefixed by a color code
   colorful_motd: true
