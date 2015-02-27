@@ -7,13 +7,13 @@ server:
   name: TotalFreedom
 
   # The address your server is located at. Please do not include the port.
-  address: play.totalfreedom.me
+  address: 100.0.27.237
   
   # Please indicate your port. This should be 25565 unless otherwise indicated by your host
   port: 25565
 
   # Shown at the server list
-  motd: TotalFreedom &8- Minecraft %mcversion%
+  motd: &cMGMCOP - &dRunning on &6%mcversion%
 
   # Every word in the MOTD will be a different color unless prefixed by a color code
   colorful_motd: true
@@ -21,12 +21,13 @@ server:
   # All players who show up as owner
   owners:
     - markbyron
+    - EthanPvPYT
 
   # URL players should appeal for bans at
-  ban_url: http://totalfreedom.boards.net/
+  ban_url: mgmcop.boards.net
 
   # URL players should appeal for permanent bans at
-  permban_url: http://bit.ly/TF_PermBan
+  permban_url: mgmcop.boards.net
   
 # ForceIP Configuration
 forceip:
