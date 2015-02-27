@@ -33,7 +33,7 @@ server:
 forceip:
     
   # Please state if you wish to enable the ForceIP system.
-  enabled: true
+  enabled: false
 
   # Please enter the kick message you wish for people to see if they are not connecting on the servers hostname
   kickmsg: You have been kicked from the server - Please connect using %address%  
