@@ -12,11 +12,11 @@ public enum TFM_PlayerRank
     IMPOSTOR("an " + ChatColor.YELLOW + ChatColor.UNDERLINE + "Impostor", ChatColor.YELLOW.toString() + ChatColor.UNDERLINE + "[IMP]"),
     NON_OP("a " + ChatColor.GREEN + "Non-OP", ChatColor.GREEN.toString()),
     OP("an " + ChatColor.RED + "OP", ChatColor.RED + "[OP]"),
-    SUPER("a " + ChatColor.GOLD + "Super Admin", ChatColor.GOLD + "[SA]"),
-    TELNET("a " + ChatColor.DARK_GREEN + "Super Telnet Admin", ChatColor.DARK_GREEN + "[STA]"),
-    SENIOR("a " + ChatColor.LIGHT_PURPLE + "Senior Admin", ChatColor.LIGHT_PURPLE + "[SrA]"),
-    OWNER("the " + ChatColor.BLUE + "Owner", ChatColor.BLUE + "[Owner]"),
-    CONSOLE("The " + ChatColor.DARK_PURPLE + "Console", ChatColor.DARK_PURPLE + "[Console]");
+    ADMIN("a " + ChatColor.GOLD + "Admin+", ChatColor.YELLOW + "[Admin+]"),
+    ADMIN++("a " + ChatColor.DARK_GREEN + "Admin++", ChatColor.DARK_GREEN + "[ADMIN++]"),
+    Senior("a " + ChatColor.LIGHT_PURPLE + "Senior(OLD) Admin", ChatColor.LIGHT_PURPLE + "[Senior]"),
+    OWNER("the " + ChatColor.DARK_RED + "Server founder/owner", ChatColor.BLUE + "[Founder/Owner]"),
+    CONSOLE("The " + ChatColor.DARK_PURPLE + "Console", ChatColor.DARK_PURPLE + "[FTP/CONSOLE]");
     private String loginMessage;
     private String prefix;
 
